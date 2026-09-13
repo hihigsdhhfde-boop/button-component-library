@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Button Game Library</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="game-info">
+            <h1>🎮 Interactive Button Game</h1>
+            <div class="stats">
+                <div class="stat-box">
+                    <span class="stat-label">Health:</span>
+                    <span class="stat-value" id="health">100</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-label">Inventory:</span>
+                    <span class="stat-value" id="inventory">None</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-label">Zombies:</span>
+                    <span class="stat-value" id="zombies">0</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-label">Gold:</span>
+                    <span class="stat-value" id="gold">0</span>
+                </div>
+            </div>
+            <div class="message-box" id="messageBox">Welcome to the game!</div>
+        </div>
+
+        <div class="buttons-grid">
+            <!-- Weapon Buttons -->
+            <button class="btn btn-weapon" onclick="giveWeapon('Wooden Sword')">🗡️ Wooden Sword</button>
+            <button class="btn btn-weapon" onclick="giveWeapon('Iron Sword')">⚔️ Iron Sword</button>
+            <button class="btn btn-weapon" onclick="giveWeapon('Diamond Sword')">💎 Diamond Sword</button>
+            <button class="btn btn-weapon" onclick="giveWeapon('Golden Sword')">🟡 Golden Sword</button>
+            <button class="btn btn-weapon" onclick="giveWeapon('Netherite Sword')">🔴 Netherite Sword</button>
+            <button class="btn btn-weapon" onclick="giveWeapon('Axe')">🪓 Axe</button>
+            <button class="btn btn-weapon" onclick="giveWeapon('Pickaxe')">⛏️ Pickaxe</button>
+            <button class="btn btn-weapon" onclick="giveWeapon('Bow')">🏹 Bow</button>
+            <button class="btn btn-weapon" onclick="giveWeapon('Crossbow')">🏯 Crossbow</button>
+            <button class="btn btn-weapon" onclick="giveWeapon('Spear')">🔱 Spear</button>
+
+            <!-- Enemy Spawn Buttons -->
+            <button class="btn btn-enemy" onclick="spawnEnemy('Zombie')">🧟 Spawn Zombie</button>
+            <button class="btn btn-enemy" onclick="spawnEnemy('Skeleton')">💀 Spawn Skeleton</button>
+            <button class="btn btn-enemy" onclick="spawnEnemy('Creeper')">💚 Spawn Creeper</button>
+            <button class="btn btn-enemy" onclick="spawnEnemy('Spider')">🕷️ Spawn Spider</button>
+            <button class="btn btn-enemy" onclick="spawnEnemy('Enderman')">👁️ Spawn Enderman</button>
+            <button class="btn btn-enemy" onclick="spawnEnemy('Witch')">🧙‍♀️ Spawn Witch</button>
+            <button class="btn btn-enemy" onclick="spawnEnemy('Wither')">☠️ Spawn Wither</button>
+            <button class="btn btn-enemy" onclick="spawnEnemy('Dragon')">🐉 Spawn Dragon</button>
+            <button class="btn btn-enemy" onclick="spawnEnemy('Ghast')">👻 Spawn Ghast</button>
+            <button class="btn btn-enemy" onclick="spawnEnemy('Piglin')">🐷 Spawn Piglin</button>
+
+            <!-- Damage Buttons -->
+            <button class="btn btn-damage" onclick="takeDamage(5)">💥 Take 5 Damage</button>
+            <button class="btn btn-damage" onclick="takeDamage(10)">💢 Take 10 Damage</button>
+            <button class="btn btn-damage" onclick="takeDamage(20)">🔥 Take 20 Damage</button>
+            <button class="btn btn-damage" onclick="takeDamage(30)">⚡ Take 30 Damage</button>
+            <button class="btn btn-damage" onclick="takeDamage(50)">💀 Take 50 Damage</button>
+            <button class="btn btn-damage" onclick="takeDamage(100)">☠️ Instant Death</button>
+
+            <!-- Healing Buttons -->
+            <button class="btn btn-heal" onclick="heal(10)">🍎 Heal 10 HP</button>
+            <button class="btn btn-heal" onclick="heal(25)">🍗 Heal 25 HP</button>
+            <button class="btn btn-heal" onclick="heal(50)">⭐ Heal 50 HP</button>
+            <button class="btn btn-heal" onclick="heal(100)">💜 Full Heal</button>
+            <button class="btn btn-heal" onclick="heal(200)">✨ Super Heal</button>
+            <button class="btn btn-heal" onclick="heal(500)">🌟 Ultimate Heal</button>
+
+            <!-- Item/Treasure Buttons -->
+            <button class="btn btn-treasure" onclick="giveItem('Diamond')">💎 Give Diamond</button>
+            <button class="btn btn-treasure" onclick="giveItem('Gold Ingot')">🟡 Give Gold Ingot</button>
+            <button class="btn btn-treasure" onclick="giveItem('Iron Ingot')">⚙️ Give Iron Ingot</button>
+            <button class="btn btn-treasure" onclick="giveItem('Emerald')">💚 Give Emerald</button>
+            <button class="btn btn-treasure" onclick="giveItem('Netherite Ingot')">🔴 Give Netherite</button>
+            <button class="btn btn-treasure" onclick="giveItem('Redstone')">🔴 Give Redstone</button>
+            <button class="btn btn-treasure" onclick="giveItem('Lapis Lazuli')">🔵 Give Lapis</button>
+            <button class="btn btn-treasure" onclick="giveItem('Obsidian')">🟣 Give Obsidian</button>
+            <button class="btn btn-treasure" onclick="giveItem('Ancient Debris')">🏘️ Give Ancient Debris</button>
+            <button class="btn btn-treasure" onclick="giveItem('End Pearl')">👁️ Give End Pearl</button>
+
+            <!-- Gold/Currency Buttons -->
+            <button class="btn btn-gold" onclick="addGold(10)">🪙 Add 10 Gold</button>
+            <button class="btn btn-gold" onclick="addGold(50)">🏆 Add 50 Gold</button>
+            <button class="btn btn-gold" onclick="addGold(100)">👑 Add 100 Gold</button>
+            <button class="btn btn-gold" onclick="addGold(500)">💰 Add 500 Gold</button>
+            <button class="btn btn-gold" onclick="addGold(1000)">🤑 Add 1000 Gold</button>
+
+            <!-- Power-up Buttons -->
+            <button class="btn btn-powerup" onclick="activatePowerUp('Invincibility')">🛡️ Invincibility</button>
+            <button class="btn btn-powerup" onclick="activatePowerUp('Speed Boost')">⚡ Speed Boost</button>
+            <button class="btn btn-powerup" onclick="activatePowerUp('Double Damage')">🔥 Double Damage</button>
+            <button class="btn btn-powerup" onclick="activatePowerUp('Regeneration')">💚 Regeneration</button>
+            <button class="btn btn-powerup" onclick="activatePowerUp('Night Vision')">👓 Night Vision</button>
+            <button class="btn btn-powerup" onclick="activatePowerUp('Flight')">🪂 Flight Mode</button>
+
+            <!-- Defense Buttons -->
+            <button class="btn btn-defense" onclick="equipArmor('Leather Armor')">🟤 Leather Armor</button>
+            <button class="btn btn-defense" onclick="equipArmor('Chain Armor')">⛓️ Chain Armor</button>
+            <button class="btn btn-defense" onclick="equipArmor('Iron Armor')">⚙️ Iron Armor</button>
+            <button class="btn btn-defense" onclick="equipArmor('Diamond Armor')">💎 Diamond Armor</button>
+            <button class="btn btn-defense" onclick="equipArmor('Netherite Armor')">🔴 Netherite Armor</button>
+            <button class="btn btn-defense" onclick="equipArmor('Shield')">🛡️ Shield</button>
+
+            <!-- Challenge Buttons -->
+            <button class="btn btn-challenge" onclick="startBattle('Easy')">⚔️ Easy Battle</button>
+            <button class="btn btn-challenge" onclick="startBattle('Medium')">⚔️⚔️ Medium Battle</button>
+            <button class="btn btn-challenge" onclick="startBattle('Hard')">⚔️⚔️⚔️ Hard Battle</button>
+            <button class="btn btn-challenge" onclick="startBattle('Nightmare')">💀 Nightmare Battle</button>
+            <button class="btn btn-challenge" onclick="startBattle('Impossible')">👹 Impossible Battle</button>
+
+            <!-- Special Buttons -->
+            <button class="btn btn-special" onclick="castSpell('Fireball')">🔥 Fireball Spell</button>
+            <button class="btn btn-special" onclick="castSpell('Frost Bolt')">❄️ Frost Bolt</button>
+            <button class="btn btn-special" onclick="castSpell('Lightning')">⚡ Lightning Strike</button>
+            <button class="btn btn-special" onclick="castSpell('Heal')">✨ Heal Spell</button>
+            <button class="btn btn-special" onclick="castSpell('Teleport')">🌀 Teleport</button>
+
+            <!-- Extra Buttons (to reach 100+) -->
+            <button class="btn btn-extra" onclick="activateCheat('Mega Boost')">🚀 Mega Boost</button>
+            <button class="btn btn-extra" onclick="activateCheat('Lucky Draw')">🍀 Lucky Draw</button>
+            <button class="btn btn-extra" onclick="activateCheat('Double XP')">✖️2 Double XP</button>
+            <button class="btn btn-extra" onclick="activateCheat('Mystery Box')">📦 Mystery Box</button>
+            <button class="btn btn-extra" onclick="activateCheat('Combo x5')">💥 Combo x5</button>
+            <button class="btn btn-extra" onclick="spawnRandomEnemy()">🎲 Random Enemy</button>
+            <button class="btn btn-extra" onclick="giveRandomWeapon()">🎁 Random Weapon</button>
+            <button class="btn btn-extra" onclick="giveRandomTreasure()">💝 Random Treasure</button>
+            <button class="btn btn-extra" onclick="triggerRoyalRumble()">👑 Royal Rumble</button>
+            <button class="btn btn-extra" onclick="activateFrenzy()">🔥 Frenzy Mode</button>
+
+            <!-- Status Effects -->
+            <button class="btn btn-status" onclick="applyEffect('Poison')">☠️ Poison</button>
+            <button class="btn btn-status" onclick="applyEffect('Bleeding')">💧 Bleeding</button>
+            <button class="btn btn-status" onclick="applyEffect('Frozen')">❄️ Frozen</button>
+            <button class="btn btn-status" onclick="applyEffect('Stunned')">⭐ Stunned</button>
+            <button class="btn btn-status" onclick="applyEffect('Burning')">🔥 Burning</button>
+
+            <!-- Reset & Game Controls -->
+            <button class="btn btn-reset" onclick="resetGame()">🔄 Reset Game</button>
+            <button class="btn btn-info" onclick="showStats()">📊 Show Stats</button>
+            <button class="btn btn-danger" onclick="gameOver()">💥 Game Over</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

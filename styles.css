@@ -1,0 +1,339 @@
+:root {
+    --primary-color: #6c5ce7;
+    --secondary-color: #00b894;
+    --danger-color: #d63031;
+    --warning-color: #fdcb6e;
+    --info-color: #0984e3;
+    --dark-bg: #2d3436;
+    --light-bg: #f5f6fa;
+    --text-color: #2d3436;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+    color: var(--text-color);
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.game-info {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.game-info h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.stat-box {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    font-weight: bold;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.stat-box:hover {
+    transform: translateY(-5px);
+}
+
+.stat-label {
+    display: block;
+    font-size: 0.9em;
+    opacity: 0.9;
+    margin-bottom: 5px;
+}
+
+.stat-value {
+    display: block;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.message-box {
+    background: var(--light-bg);
+    border-left: 4px solid var(--primary-color);
+    padding: 15px 20px;
+    border-radius: 5px;
+    font-size: 1.1em;
+    color: var(--text-color);
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.buttons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 12px;
+    margin-top: 30px;
+}
+
+.btn {
+    padding: 12px 16px;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.95em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.btn:active {
+    transform: translateY(-1px);
+}
+
+/* Button Color Themes */
+.btn-weapon {
+    background: linear-gradient(135deg, #a29bfe, #6c5ce7);
+    color: white;
+}
+
+.btn-weapon:hover {
+    background: linear-gradient(135deg, #6c5ce7, #5f3dc4);
+}
+
+.btn-enemy {
+    background: linear-gradient(135deg, #fab1a0, #e17055);
+    color: white;
+}
+
+.btn-enemy:hover {
+    background: linear-gradient(135deg, #e17055, #d63031);
+}
+
+.btn-damage {
+    background: linear-gradient(135deg, #ff7675, #d63031);
+    color: white;
+}
+
+.btn-damage:hover {
+    background: linear-gradient(135deg, #d63031, #b71c1c);
+}
+
+.btn-heal {
+    background: linear-gradient(135deg, #55efc4, #00b894);
+    color: white;
+}
+
+.btn-heal:hover {
+    background: linear-gradient(135deg, #00b894, #009974);
+}
+
+.btn-treasure {
+    background: linear-gradient(135deg, #ffeaa7, #fdcb6e);
+    color: #2d3436;
+}
+
+.btn-treasure:hover {
+    background: linear-gradient(135deg, #fdcb6e, #fab005);
+}
+
+.btn-gold {
+    background: linear-gradient(135deg, #ffd89b, #fab005);
+    color: #2d3436;
+}
+
+.btn-gold:hover {
+    background: linear-gradient(135deg, #fab005, #f2b61b);
+}
+
+.btn-powerup {
+    background: linear-gradient(135deg, #a29bfe, #74b9ff);
+    color: white;
+}
+
+.btn-powerup:hover {
+    background: linear-gradient(135deg, #74b9ff, #0984e3);
+}
+
+.btn-defense {
+    background: linear-gradient(135deg, #81ecec, #00cec9);
+    color: white;
+}
+
+.btn-defense:hover {
+    background: linear-gradient(135deg, #00cec9, #009b95);
+}
+
+.btn-challenge {
+    background: linear-gradient(135deg, #fd79a8, #e84393);
+    color: white;
+}
+
+.btn-challenge:hover {
+    background: linear-gradient(135deg, #e84393, #c71f5f);
+}
+
+.btn-special {
+    background: linear-gradient(135deg, #ffbe76, #ff7675);
+    color: white;
+}
+
+.btn-special:hover {
+    background: linear-gradient(135deg, #ff7675, #e17055);
+}
+
+.btn-extra {
+    background: linear-gradient(135deg, #dfe6e9, #b2bec3);
+    color: #2d3436;
+}
+
+.btn-extra:hover {
+    background: linear-gradient(135deg, #b2bec3, #95a5a6);
+}
+
+.btn-status {
+    background: linear-gradient(135deg, #a29bfe, #fd79a8);
+    color: white;
+}
+
+.btn-status:hover {
+    background: linear-gradient(135deg, #fd79a8, #e84393);
+}
+
+.btn-reset {
+    background: linear-gradient(135deg, #74b9ff, #0984e3);
+    color: white;
+}
+
+.btn-reset:hover {
+    background: linear-gradient(135deg, #0984e3, #005ba4);
+}
+
+.btn-info {
+    background: linear-gradient(135deg, #55efc4, #00cec9);
+    color: white;
+}
+
+.btn-info:hover {
+    background: linear-gradient(135deg, #00cec9, #009b95);
+}
+
+.btn-danger {
+    background: linear-gradient(135deg, #ff6b9d, #d63031);
+    color: white;
+}
+
+.btn-danger:hover {
+    background: linear-gradient(135deg, #d63031, #b71c1c);
+}
+
+/* Animations */
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-5px);
+    }
+    75% {
+        transform: translateX(5px);
+    }
+}
+
+.message-box.damage {
+    animation: shake 0.5s;
+    border-left-color: var(--danger-color);
+    background: #ffe0e0;
+}
+
+.message-box.heal {
+    animation: pulse 0.5s;
+    border-left-color: var(--secondary-color);
+    background: #e0ffe0;
+}
+
+.message-box.victory {
+    border-left-color: #ffd700;
+    background: #fffacd;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .game-info h1 {
+        font-size: 1.8em;
+    }
+
+    .buttons-grid {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 8px;
+    }
+
+    .btn {
+        padding: 10px 12px;
+        font-size: 0.85em;
+        min-height: 45px;
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .buttons-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .btn {
+        font-size: 0.75em;
+        padding: 8px 10px;
+        min-height: 40px;
+    }
+
+    .game-info h1 {
+        font-size: 1.5em;
+    }
+}
